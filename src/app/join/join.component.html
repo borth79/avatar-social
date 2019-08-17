@@ -1,0 +1,42 @@
+<div class="container">
+  <h3>Join</h3>
+  <hr />
+  <p>Connect with your avatar friends and eliminate the fear of missing out.</p>
+
+
+
+
+
+  <form>
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Joe Bauers" [(ngModel)]="uName" (input)="checkFormCompleted()">
+          <small class="form-text text-muted">Who are you?</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="uEmail" (input)="checkFormCompleted()">
+          <small class="form-text text-muted">We'll never share your email with anyone else, except 3rd parties.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="uPassword" (input)="checkFormCompleted()">
+          <small class="form-text text-muted">Use the same password you use for every other website.</small>
+        </div>
+        <hr />
+        <div class="form-group form-check">
+          <input type="checkbox" name="acceptTerms" class="form-check-input" [(ngModel)]="uAcceptTerms" (ngModelChange)="checkFormCompleted()" >
+          <label class="form-check-label">Accept easy-to-understand ;) terms and conditions</label>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 15px;"></div>
+
+    <button type="submit" class="btn btn-primary"
+            [disabled]="!formCompleted"
+            (click)="joinNow($event)">{{joinBtnText}}</button>
+  </form>
+</div>
+
